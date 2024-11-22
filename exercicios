@@ -1,0 +1,114 @@
+int main()
+{
+
+    //Atividades:
+    /*1) escreva um algoritmo para calcular a media dos numeros digitados pelo usuario, somente os
+    números pares, o término da entrada de dados será conhecido quando informado um numero
+    menor ou igual a zero*/
+    int numero, soma = 0, quantidade = 0;
+    float media;
+
+    printf("Digite números inteiros (digite um número menor ou igual a zero para encerrar):\n");
+
+    do {
+        printf("Número: ");
+        scanf("%d", &numero);
+
+        if (numero > 0 && numero % 2 == 0) { // Verifica se o número é par e positivo
+            soma += numero;
+            quantidade++;
+        }
+    } while (numero > 0); // Continua até que o número seja menor ou igual a zero
+
+    if (quantidade > 0) {
+        media = (float)soma / quantidade; // Calcula a média
+        printf("A média dos números pares é: %.2f\n", media);
+    } else {
+        printf("Nenhum número par foi digitado.\n");
+    }
+
+    return 0;
+}
+
+
+2)Escreva um algoritmo que imprima todas as possibilidades de que no lancamento de dois dados
+tenhamos o valor 7 como resultado da soma dos valores de cada dado.
+int dado1, dado2;
+printf("Combinacoes em que a soma de dois dados e igual a 7:\n");
+
+for(dado1 = 1; dado1 <= 6; dado1++){
+    for(dado2 = 1; dado2 <= 6; dado2++){
+        if(dado1 + dado2 == 7){
+            printf("Dado 1: %d, Dado 2: %d\n", dado1, dado2);
+        }
+    }
+}
+
+
+
+3)Ana tem 1,50 metros e cresce 2 centimetros por ano, enquanto feliz tem 1,10 e cresce 3
+centrimetos por ano. construa um algoritmo que calcule e escreva o numero de anos que serao
+necessarios para que Feliz seja maior que Ana.
+float altura_ana = 1.50; //Altura inicial da Ana em metros
+float altura_feliz = 1.10; //Altura inicial do Feliz em metros
+float crescimento_ana = 0.02; //Crescimento de Ana em metros por ano
+float crescimento_feliz = 0.03; //Crescimento de feliz em metros por ano
+int anos = 0; //Contador de anos;
+
+// Enquanto feliz não for maior que ana
+while(altura_feliz <= altura_ana){
+    altura_ana += crescimento_ana; //Ana cresce
+    altura_feliz += crescimento_feliz; // Feliz cresce
+    anos++; // Incrementa o número de anos
+}
+// exibe o resultado
+printf("Serao necessarios %d anos para que Feliz seja maior que ana.\n", anos);
+
+
+4)Escreva um algoritmo para ler um número qualquer calcular e escrever o seu somatório;
+int i, numero, somatorio = 0;
+
+    // Ler o número fornecido pelo usuário
+    printf("Digite um numero: ");
+    scanf("%d", &numero);
+
+    // Calcular o somatório de 1 até o número
+    for (i = 1; i <= numero; i++) {
+        somatorio += i; // Adiciona o valor de i ao somatório
+    }
+
+    // Exibir o resultado
+    printf("O somatorio de 1 ate %d e: %d\n", numero, somatorio);
+
+ATIVIDADE 4)
+
+char sexo[4], olhos, cabelos;
+  int idade, quant =0, maior = 0;
+
+  while (1){
+    printf("informe sexo (Mas/Fem/Fim):");
+    scanf("%s",sexo);
+    setbuf(stdin,NULL);
+    if (strcmp(sexo,"Fim")==0)
+       break;
+    printf("informe Cor dos olhos (a - azuis, v - verde, c - castanhos)");
+    scanf("%c",&olhos);
+    setbuf(stdin,NULL);
+    printf("informe Cor dos cabelos (L - louro, C - castanho, P -preto)");
+    scanf("%c",&cabelos);
+    setbuf(stdin,NULL);
+    printf("informe idade:");
+    scanf("%d",&idade);
+    setbuf(stdin,NULL);
+    if (idade > maior)
+       maior = idade;
+    if (strcmp(sexo,"Fem")==0 && idade >= 18 && idade <= 35 && olhos == 'V' && cabelos == 'L')
+        quant++;
+  }
+  printf("\nMaior idade %d",maior);
+  printf("\nNumero de individuos com caracteristica %d",quant);
+
+
+
+
+
